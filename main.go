@@ -2,6 +2,8 @@ package main
 
 import (
 	"os"
+
+	"github.com/singlefile/app"
 )
 
 func init() {
@@ -12,12 +14,12 @@ func init() {
 
 func main() {
 
-	// a := app.App{}
+	a := app.App{}
 
-	// a.Initialize(
-	// 	os.Getenv("BOT_DB_USERNAME"),
-	// 	os.Getenv("BOT_DB_PASWORD"),
-	// 	os.Getenv("BOT_DB_NAME"))
+	a.Initialize(
+		os.Getenv("BOT_DB_USERNAME"),
+		os.Getenv("BOT_DB_PASWORD"),
+		os.Getenv("BOT_DB_NAME"))
 
-	// a.Run(":8080")
+	a.Run(":8080")
 }
