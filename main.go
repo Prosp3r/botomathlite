@@ -2,8 +2,6 @@ package main
 
 import (
 	"os"
-
-	"github.com/singlefile/app"
 )
 
 func init() {
@@ -14,7 +12,7 @@ func init() {
 
 func main() {
 
-	a := app.App{}
+	a := App{}
 
 	a.Initialize(
 		os.Getenv("BOT_DB_USERNAME"),
