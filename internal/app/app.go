@@ -1,4 +1,4 @@
-package main
+package app
 
 import (
 	"database/sql"
@@ -42,11 +42,42 @@ func RespondWithError(w http.ResponseWriter, responseCode int, message string) {
 	RespondWithJSON(w, responseCode, map[string]string{"error": message})
 }
 
+func (a *App) initializeRoutes() {
+	a.Router.HandleFunc("/", a.getHomePage).Methods("GET")
+	a.Router.HandleFunc("/robots", a.createRobot).Methods("POST")
+	a.Router.HandleFunc("/robots", a.getRobots).Methods("GET")
+	a.Router.HandleFunc("/tasks", a.createTask).Methods("POST")
+	a.Router.HandleFunc("/tasks", a.getTasks).Methods("GET")
+	a.Router.HandleFunc("/leaderboard", a.getLeaderBoard).Methods("GET")
+	a.Router.HandleFunc("/user", a.createUser).Methods("POST")
+}
+
 func (a *App) getHomePage(w http.ResponseWriter, r *http.Request) {
+	// logTag := "getHomepage methods"
 	message := fmt.Sprintf("Welcome to monolith Bot-o-math Solution")
 	RespondWithJSON(w, http.StatusOK, message)
 }
 
-func (a *App) initializeRoutes() {
-	a.Router.HandleFunc("/", a.getHomePage).Methods("GET")
+func (a *App) createRobot(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (a *App) getRobots(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (a *App) createTask(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (a *App) getTasks(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (a *App) getLeaderBoard(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func (a *App) createUser(w http.ResponseWriter, r *http.Request) {
+
 }

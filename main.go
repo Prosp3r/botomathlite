@@ -1,6 +1,10 @@
 package main
 
-import "os"
+import (
+	"os"
+
+	"github.com/singlefile/internal/app"
+)
 
 func init() {
 	os.Setenv("BOT_DB_USERNAME", "postgres")
@@ -10,8 +14,8 @@ func init() {
 
 func main() {
 
-	a := App{}
-
+	// a := App{}
+	a := app.App{}
 	a.Initialize(
 		os.Getenv("BOT_DB_USERNAME"),
 		os.Getenv("BOT_DB_PASWORD"),
