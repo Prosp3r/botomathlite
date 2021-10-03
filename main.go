@@ -2,6 +2,8 @@ package main
 
 import (
 	"os"
+
+	"github.com/Prosp3r/botomathlite/app"
 )
 
 func init() {
@@ -12,7 +14,7 @@ func init() {
 
 func main() {
 
-	a := App{}
+	a := app.App{}
 
 	a.Initialize(
 		os.Getenv("BOT_DB_USERNAME"),
