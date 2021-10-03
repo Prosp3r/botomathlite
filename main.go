@@ -14,7 +14,7 @@ func init() {
 
 func main() {
 
-	a := app.App{}
+	a := App{}
 
 	a.Initialize(
 		os.Getenv("BOT_DB_USERNAME"),
