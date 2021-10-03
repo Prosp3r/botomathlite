@@ -1,10 +1,6 @@
 package main
 
-import (
-	"os"
-
-	"github.com/Prosp3r/botomathlite/app"
-)
+import "os"
 
 func init() {
 	os.Setenv("BOT_DB_USERNAME", "postgres")
